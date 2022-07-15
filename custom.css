@@ -1,57 +1,68 @@
-*{
+* {
     margin: 0;
     padding: 0;
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #ecf0f1;
+    box-sizing: border-box;
 }
 
-#button{
-    margin-bottom: 10px;
-    margin-top: 30px;
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #ecf0f1;
+    overflow-y: hidden;
 }
-#button button{
-    width: 300px;
-    padding: 15px 0;
+
+.button{
+    display: flex;
+    justify-content: center;
+    background-color: #ecf0f1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 15vh;
+    align-items: center;
+}
+
+button {
+    padding: 3px 20px;
     font-size: 25px;
     border-radius: 12px;
-    background-color: #E21717;
+    background-color: #df2b2b;
     border: none;
     outline: none;
     color: white;
     cursor: pointer;
-    text-shadow: 0 0 2px rgba(17, 17, 17, 0.800);
-}
-#button button:hover{
-    background-color: #ad0909;
+    display: flex;
+    align-items: center;
 }
 
+button img{
+    height: 50px;
+    margin-left: 10px;
+    mix-blend-mode: multiply;
+}
+.container-wrapper{
+    padding: 0 30px;
+}
 
-#container{
-    min-height: 100%;
-    width: 95%;
-    padding:20px;
+#container {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 30px;
+    justify-content: space-evenly;
+    height: 85vh;
+    overflow-y: scroll;
+    gap: 10px;
+    scrollbar-width: 0;
 }
 
-#container img{
-    width: 250px;
-    height: auto;
+#container img {
+    /* width: 200px; */
+    height: 200px;
     border-radius: 5px;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.500);
     margin: 20px 10px;
     border: 2px solid white;
 }
 
-
-
-
+#container::-webkit-scrollbar{
+    display: none;
+}
