@@ -7,20 +7,32 @@
 body {
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #ecf0f1;
     overflow-y: hidden;
+    background:black;
+    background: url(./icons/cat.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(30px);
 }
 
 .button{
     display: flex;
     justify-content: center;
-    background-color: #ecf0f1;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: 15vh;
+    background-color: #13121279;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+    backdrop-filter: blur(80px);
+    height: 13vh;
     align-items: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
 }
 
-button {
+.button button {
     padding: 3px 20px;
     font-size: 25px;
     border-radius: 12px;
@@ -38,9 +50,6 @@ button img{
     margin-left: 10px;
     mix-blend-mode: multiply;
 }
-.container-wrapper{
-    padding: 0 30px;
-}
 
 #container {
     width: 100%;
@@ -48,21 +57,85 @@ button img{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 85vh;
+    height: 100vh;
     overflow-y: scroll;
     gap: 10px;
-    scrollbar-width: 0;
+    padding-top: 15vh;
 }
 
 #container img {
-    /* width: 200px; */
     height: 200px;
     border-radius: 5px;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.500);
     margin: 20px 10px;
     border: 2px solid white;
+    transition: all ease 0.5s;
 }
 
 #container::-webkit-scrollbar{
-    display: none;
+    width: 5px;
+    background: grey;
 }
+
+#container::-webkit-scrollbar-thumb{
+    background: rgb(247, 247, 247);
+    border-radius: 5px;
+}
+
+.focused-img{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in;
+    background: rgba(0, 0, 0, 0.774);
+}
+
+.focused-img img{
+    height: 60vh;
+    max-width: 90vw;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.focused-img button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 9999;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    right: 10px;
+    border: none;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.focused-img button span{
+    display: block;
+    background: rgba(0, 0, 0, 0.900);
+    padding: 2px 8px;
+}
+
+.focused-img button span:first-child{
+    transform: rotate(45deg) translate(5px, -5px);
+}
+
+.focused-img button span:last-child{
+    transform: rotate(-45deg) translate(-6px, -6px);
+}
+
+.img-wrapper{
+    position: relative;
+}
+
